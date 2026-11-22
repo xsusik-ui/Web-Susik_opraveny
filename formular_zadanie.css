@@ -1,0 +1,220 @@
+.form-preview-wrapper {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.form-container, .preview-container {
+    flex: 1;
+}
+.form-container {
+    background-color: #fafafa;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.field-group {
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #334155;
+}
+
+/* Єдиний вигляд для input, select, textarea */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+.preview-container {
+    background-color: #f8fafc;
+    padding: 25px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.preview-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: #1e293b;
+}
+
+#previewBox p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+#previewBox span {
+    color: #0284c7;
+    font-weight: bold;
+}
+
+.main-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 1100px;
+}
+
+.form-wrapper, .preview-wrapper {
+    flex: 1;
+}
+.form-wrapper {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+.preview-wrapper {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px dashed #cbd5e1;
+}
+
+.preview-wrapper h2 {
+    color: #334155;
+    margin-top: 0;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+}
+
+.preview-card p {
+    margin: 0.8rem 0;
+    word-break: break-word;
+    color: #475569;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fff;
+    color: #1e293b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+button[type="submit"] {
+    background-color: #2563eb;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+button[type="submit"]:hover {
+    background-color: #1d4ed8;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.2rem;
+}
+
+.radio-group label, .checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    color: #475569;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Knižnica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Верхня панель навігації -->
+    <div id="topbar-placeholder"></div>
+
+    <main>
+        <h1>Moja knižnica</h1>
+        <form id="novaKniha" class="nova-kniha">
+            <input id="nNazov" type="text" placeholder="Názov knihy" required>
+            <input id="nAutor" type="text" placeholder="Autor" required>
+            <input id="nRok" type="number" step="1" placeholder="Rok vydania" required>
+            <input id="nCena" type="number" step="0.01" min="0" placeholder="Cena (€)" required>
+            <button type="submit">Pridať knihu</button>
+        </form>
+        <div class="zmena-ceny">
+            <label for="cena">Zmena ceny (€, napr. 1.5 alebo -2):</label>
+            <input type="number" id="cena" step="0.01" placeholder="0.00">
+        </div>
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Názov</th>
+                    <th>Autor</th>
+                    <th>Rok</th>
+                    <th>Cena (€)</th>
+                    <th>Akcia</th>
+                </tr>
+            </thead>
+            <tbody id="zoznam"></tbody>
+        </table>
+    </main>
+
+    <!-- Скрипт завантаження топбару -->
+    <script>
+        fetch('topbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('topbar-placeholder').innerHTML = data;
+            });
+    </script>
+    
+    <!-- Підключаємо логіку таблиці та бази даних -->
+    <script src="knihy.js" defer></script>
+</body>
+</html>

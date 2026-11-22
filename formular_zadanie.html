@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulár Zadanie - Databázy a internet</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="formular_zadanie.css">
+</head>
+<body>
+    <div id="topbar-container"></div>
+    
+    <div class="container main-layout">
+        <div class="form-wrapper" id="form-wrapper">
+            <h1>Registračný formulár</h1>
+            <form id="zadanie-form">
+                
+                <div class="form-group">
+                    <label for="meno">Meno a priezvisko:</label>
+                    <input type="text" id="meno" name="meno" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefon">Telefónne číslo:</label>
+                    <input type="tel" id="telefon" name="telefon">
+                </div>
+
+                <div class="form-group">
+                    <label for="datum">Dátum narodenia:</label>
+                    <input type="date" id="datum" name="datum">
+                </div>
+
+                <div class="form-group">
+                    <label for="kurz">Kurz:</label>
+                    <select id="kurz" name="kurz">
+                        <option value="">-- Vyberte kurz --</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Úroveň:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="uroven" value="Beginner"> Beginner</label>
+                        <label><input type="radio" name="uroven" value="Intermediate"> Intermediate</label>
+                        <label><input type="radio" name="uroven" value="Advanced"> Advanced</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="poznamka">Poznámka:</label>
+                    <textarea id="poznamka" name="poznamka" rows="4"></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="suhlas" name="suhlas" required> Súhlasím s podmienkami
+                    </label>
+                </div>
+
+                <button type="submit">Odoslať formulár</button>
+            </form>
+        </div>
+
+        <!-- Živý náhľad zadaných údajov -->
+        <div class="preview-wrapper" id="preview-wrapper">
+            <h2>Živý náhľad údajov</h2>
+            <div class="preview-card">
+                <p><strong>Meno a priezvisko:</strong> <span id="prev-meno">-</span></p>
+                <p><strong>E-mail:</strong> <span id="prev-email">-</span></p>
+                <p><strong>Telefónne číslo:</strong> <span id="prev-telefon">-</span></p>
+                <p><strong>Dátum narodenia:</strong> <span id="prev-datum">-</span></p>
+                <p><strong>Kurz:</strong> <span id="prev-kurz">-</span></p>
+                <p><strong>Úroveň:</strong> <span id="prev-uroven">-</span></p>
+                <p><strong>Poznámka:</strong> <span id="prev-poznamka">-</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Globálny JS pre topbar -->
+    <script src="app.js"></script>
+    <!-- Špecifický JS pre tento formulár a živý náhľad -->
+    <script src="formular_zadanie.js"></script>
+</body>
+</html>

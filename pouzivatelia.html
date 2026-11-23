@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Sprava pouzivatelov</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <script src="pouzivatelia.js" defer></script>
+</head>
+<body>
+    <div id="topbar-container"></div>
+    <main>
+        <h1>Sprava pouzivatelov</h1>
+        <form id="registraciaForm">
+            <input id="meno" type="text" placeholder="Meno a priezvisko" required>
+            <input id="email" type="email" placeholder="E-mail" required>
+            <input id="heslo" type="password" minlength="6" placeholder="Heslo (min. 6 znakov)" required>
+            <button type="submit">Registrovat pouzivatela</button>
+        </form>
+        <p id="sprava"></p>
+
+        <h2>Zoznam zaregistrovanych pouzivatelov</h2>
+        <table border="1" cellpadding="8">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Meno</th>
+                    <th>E-mail</th>
+                    <th>Akcia</th>
+                </tr>
+            </thead>
+            <tbody id="zoznamPouzivatelov"></tbody>
+        </table>
+    </main>
+</body>
+</html>

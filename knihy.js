@@ -73,7 +73,12 @@ function otvorNastavenia(kniha) {
 }
 
 function nacitajKnihy() {
-    fetch("/api/knihy")
+    const hladat = document.getElementById("hladatInput").value;
+    const zoradit = document.getElementById("zoraditSelect").value;
+    const smer = document.getElementById("smerSelect").value;
+    const params = new URLSearchParams({ hladat, zoradit, smer });
+
+    fetch("/api/knihy?" + params.toString())
         .then(odpoved => odpoved.json())
         .then(knihy => {
             const zoznam = document.getElementById("zoznam");
@@ -145,6 +150,32 @@ function nacitajKnihy() {
 }
 
 nacitajKnihy();
+
+// Bonus: zobrazenie prihlaseneho pouzivatela
+(function zobrazPrihlaseneho() {
+    const info = document.getElementById("prihlasenyInfo");
+    const ulozeny = sessionStorage.getItem("prihlasenyPouzivatel");
+    if (ulozeny) {
+        const p = JSON.parse(ulozeny);
+        info.textContent = `Prihlaseny: ${p.meno} (${p.email})`;
+    } else {
+        const odkaz = document.createElement("a");
+        odkaz.href = "prihlasenie.html";
+        odkaz.textContent = "Prihlasit sa";
+        info.appendChild(odkaz);
+    }
+})();
+
+// Reakcia na zmenu filtra alebo zoradenia
+document.getElementById("hladatInput").addEventListener("input", nacitajKnihy);
+document.getElementById("zoraditSelect").addEventListener("change", nacitajKnihy);
+document.getElementById("smerSelect").addEventListener("change", nacitajKnihy);
+document.getElementById("resetFilterBtn").addEventListener("click", () => {
+    document.getElementById("hladatInput").value = "";
+    document.getElementById("zoraditSelect").value = "id";
+    document.getElementById("smerSelect").value = "ASC";
+    nacitajKnihy();
+});
 
 document.getElementById("novaKniha").addEventListener("submit", e => {
     e.preventDefault();

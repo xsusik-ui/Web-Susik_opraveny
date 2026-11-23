@@ -10,6 +10,7 @@
     <div id="topbar-placeholder"></div>
 
     <main>
+        <p id="prihlasenyInfo"></p>
         <h1>Moja knižnica</h1>
         <form id="novaKniha" class="nova-kniha">
             <input id="nNazov" type="text" placeholder="Názov knihy" required>
@@ -18,6 +19,21 @@
             <input id="nCena" type="number" step="0.01" min="0" placeholder="Cena (€)" required>
             <button type="submit">Pridať knihu</button>
         </form>
+        <div id="filterPanel" style="margin: 15px 0;">
+            <input id="hladatInput" type="text" placeholder="Hladat nazov alebo autora...">
+            <select id="zoraditSelect">
+                <option value="id">Zoradit podla: ID</option>
+                <option value="nazov">Nazov</option>
+                <option value="autor">Autor</option>
+                <option value="rok">Rok vydania</option>
+                <option value="cena">Cena</option>
+            </select>
+            <select id="smerSelect">
+                <option value="ASC">Vzostupne (ASC)</option>
+                <option value="DESC">Zostupne (DESC)</option>
+            </select>
+            <button id="resetFilterBtn" type="button">Zrusit filter</button>
+        </div>
         <div class="zmena-ceny">
             <label for="cena">Zmena ceny (€, napr. 1.5 alebo -2):</label>
             <input type="number" id="cena" step="0.01" placeholder="0.00">
